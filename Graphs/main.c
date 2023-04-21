@@ -7,9 +7,9 @@ int main() {
 	Graph G;
 	G.V = 0;
 	EdgeList* edge_array;
-	
+
 	int to, weight;
-	
+
 	int* in_degrees;
 	// new list and insert at front function
 	// add edge function
@@ -27,25 +27,22 @@ int main() {
 			insert_edge(&G.edges[j], e);
 		}
 	}
-		
-	in_degrees = malloc(G.V*(sizeof(int)));
+
+	in_degrees = malloc(G.V * (sizeof(in_degrees)));
 	for (int v = 0; v < G.V; v++) {
 		in_degrees[v] = 0;
 	}
+	for (int z = 0; z < G.V; z++) {
+		EdgeNodePtr current = G.edges[z].head;
+		while (current != NULL) {
+			in_degrees[current->edge.to_vertex]++;
+			current = current->next;
+		}
 
+	}
+	for (int g = 0; g < G.V; g++) {
+		printf("Vertex %d: %d\n", g, in_degrees[g]);
+	}
 
-	//edge_array = malloc(G.V * sizeof(EdgeList));
-	//for (int v = 0; v < G.V; v++) {
-
-	//}
-
-	
-	//int out;
-	//scanf_s("%d", &out);
-	//for (int i = 0; i < out; i++) {
-	//	scanf_s("%d,%d", &to, &weight);
-	//	// add edge
-	//}
-
-
+	return 32;
 }
