@@ -27,3 +27,5 @@ int* new_in_degrees(Graph G);
 void add_edges(Graph G, int* in_degrees);
 // Print inputted graph
 void print_graph(Graph G, int* in_degrees);
+// Tests the graph function
+void test_graph();
