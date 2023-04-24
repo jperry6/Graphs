@@ -19,5 +19,11 @@ typedef struct graph {
 	EdgeList* edges;
 } Graph;
 
-// Insert the edge at the front of the edge list
-void insert_edge(EdgeList* edgelist, Edge edge);
+// Initialise the graph
+Graph new_graph();
+// Initialise in-degrees of graph
+int* new_in_degrees(Graph G);
+// Add edges to graph
+void add_edges(Graph G, int* in_degrees);
+// Print inputted graph
+void print_graph(Graph G, int* in_degrees);
